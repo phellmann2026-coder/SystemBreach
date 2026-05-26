@@ -50,9 +50,9 @@ public class FileHandler {
         }
     }
 
-    public void saveScore(int score) {
+    public void saveScore(String name, int score) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("highscores.txt", true))) {
-            bw.write("Score: " + score);
+            bw.write(name + " - Score: " + score);
             bw.newLine();
         } catch (Exception e) {
             System.out.println("Error saving score.");
