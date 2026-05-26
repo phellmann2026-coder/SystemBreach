@@ -1,11 +1,11 @@
-hello|reverse
+hello|ceasar
 apple|reverse
 world|reverse
-system|reverse
+system|ceasar
 breach|reverse
 login|reverse
 access|reverse
-code|reverse
+code|ceasar
 signal|reverse
 security|reverse
 firewall|reverse
@@ -24,3 +24,7 @@ intrusion|reverse
 cybersecurity|reverse
 malware|reverse
 compromise|reverse
+breach|vowelshift
+firewall|reverse
+security|caesar
+network|vowelshift
