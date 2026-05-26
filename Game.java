@@ -9,6 +9,7 @@ import java.util.*;
 public class Game {
 
     Player player;
+    String playerName;
     FileHandler fileHandler;
 
     CipherModule cipher;
@@ -24,6 +25,11 @@ public class Game {
     fileHandler.loadAll();
 
     player = new Player(fileHandler.startScore, fileHandler.lives);
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter your hacker name: ");
+    playerName = sc.nextLine();
 
     cipher = new CipherModule(fileHandler.cipherData);
     pattern = new PatternModule();
