@@ -58,6 +58,25 @@ public class CipherModule implements Module {
             return result;
         }
 
+        if (type.equals("vowelshift")) {
+
+        String result = "";
+
+            for (char c : word.toCharArray()) {
+
+                switch (c) {
+                    case 'a': result += 'e'; break;
+                    case 'e': result += 'i'; break;
+                    case 'i': result += 'o'; break;
+                    case 'o': result += 'u'; break;
+                    case 'u': result += 'a'; break;
+                    default: result += c;
+                }
+              }
+
+             return result;
+            }
+
         return word;
     }
 }
