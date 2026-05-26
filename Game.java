@@ -113,6 +113,6 @@ public class Game {
         else
             System.out.println("Rank: CONTAINED FAILURE");
 
-        fileHandler.saveScore(player.score);
+        fileHandler.saveScore(playerName, player.score);
     }
 }
