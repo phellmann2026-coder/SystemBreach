@@ -76,6 +76,7 @@ public class Game {
             boolean correct = module.play(sc);
 
             if (correct) {
+                SoundPlayer.playSound("correct.wav");
                 streak++;
                 player.score += 20;
 
@@ -86,6 +87,7 @@ public class Game {
 
                 
             } else {
+                SoundPlayer.playsound("wrong.wav");
                 streak = 0;
                 player.score -= 10;
                 player.lives--;
@@ -99,10 +101,14 @@ public class Game {
     private void endGame() {
         System.out.println("\n=== GAME OVER ===");
 
-        if (player.lives > 0)
+        if (player.lives > 0) {
             System.out.println("SYSTEM BREACHED!");
-        else
+            SoundPlayer.playSound("victory.wav");
+        }
+        else {
             System.out.println("SYSTEM LOCKED!");
+            SoundPlayer.playSound("failure.wav");
+        }
 
         System.out.println("Final Score: " + player.score);
 
