@@ -47,13 +47,22 @@ public class CipherModule implements Module {
         }
 
         if (type.equals("caesar")) {
+
             int shift = rand.nextInt(5) + 1;
             String result = "";
-
+        
             for (char c : word.toCharArray()) {
-                result += (char)(c + shift);
+        
+                if (Character.isLetter(c)) {
+        
+                    char base = Character.isUpperCase(c) ? 'A' : 'a';
+        
+                    c = (char)((c - base + shift) % 26 + base);
+                }
+        
+                result += c;
             }
-
+        
             System.out.println("(Shift +" + shift + ")");
             return result;
         }
